@@ -20,14 +20,33 @@ const SingleMovie = () => {
       </div>
     )
   }
-  const { Poster: poster, Title: title, Plot: plot, Year: year } = movie
+  const {
+    Poster: poster,
+    Title: title,
+    Plot: plot,
+    Year: year,
+    Actors: actors,
+    Director: director,
+    Awards: awards,
+    BoxOffice: boxoffice,
+    Writer: writer,
+  } = movie
   return (
     <section className='single-movie'>
       <img src={poster} alt={title} />
       <div className='single-movie-info'>
         <h2>{title}</h2>
         <p>{plot}</p>
-        <h4>{year}</h4>
+        <h4>
+          {year}, directed by {director}
+        </h4>
+        <p>
+          {awards}, {actors}
+        </p>
+        <p>
+          Box office<span style={{ fontWeight: 'bold' }}> {boxoffice}</span>
+        </p>
+        <p>{writer}</p>
         <Link to='/' className='btn'>
           back to movies
         </Link>
