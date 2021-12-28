@@ -4,7 +4,7 @@ export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
-  const [query, setQuery] = useState('lord of the rings')
+  const [query, setQuery] = useState('star wars')
   const { isLoading, error, data: movies } = useFetch(`&s=${query}`)
 
   return (
